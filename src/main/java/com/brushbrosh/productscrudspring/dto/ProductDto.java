@@ -9,17 +9,18 @@ public class ProductDto {
     private String name;
 
     @Min(0)
-    private float price;
+    private Float price;
 
     public ProductDto() {
     }
+    
+	public ProductDto(@NotBlank String name, @Min(0) Float price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
 
-    public ProductDto(String name, float price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public String getName() {
+	public String getName() {
         return name;
     }
 
@@ -27,14 +28,12 @@ public class ProductDto {
         this.name = name;
     }
 
-    public float getPrice() {
-        return price;
-    }
+	public Float getPrice() {
+		return price;
+	}
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
+	public void setPrice(Float price) {
+		this.price = price;
+	}
     
-
 }

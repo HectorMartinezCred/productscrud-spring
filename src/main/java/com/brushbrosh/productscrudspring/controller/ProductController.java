@@ -60,7 +60,7 @@ public class ProductController {
         if(StringUtils.isBlank(productDto.getName())){
             return new ResponseEntity(new Message("Product name is mandatory."), HttpStatus.BAD_REQUEST);
         }
-        if(productDto.getPrice()<0){
+        if(productDto.getPrice()==null || productDto.getPrice()<0){
             return new ResponseEntity(new Message("Price must be greater than 0."), HttpStatus.BAD_REQUEST);
         }
         if(productService.existsByName(productDto.getName())){
