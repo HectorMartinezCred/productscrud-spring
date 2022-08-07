@@ -55,7 +55,7 @@ public class ProductController {
         }
     }
 
-    @PostMapping("/create")
+    @PostMapping("/add")
     public ResponseEntity<?> create(@RequestBody ProductDto productDto) {
         if(StringUtils.isBlank(productDto.getName())){
             return new ResponseEntity(new Message("Product name is mandatory."), HttpStatus.BAD_REQUEST);
